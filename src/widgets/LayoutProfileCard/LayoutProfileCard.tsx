@@ -1,10 +1,12 @@
+import React from "react";
 import { Link } from "react-router-dom";
-import css from "./LayoutProfileCard.module.css";
+
+import * as css from "./styles";
 
 export function LayoutProfileCard() {
   return (
-    <div className={css.root}>
-      <Link to="/login">login</Link>
+    <div css={css.root}>
+      <Link to="/login" />
     </div>
   );
 }

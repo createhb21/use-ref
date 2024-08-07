@@ -1,6 +1,6 @@
-import type { ReactNode } from "react";
+import React, { type ReactNode } from "react";
 import { Outlet, ScrollRestoration } from "react-router-dom";
-import css from "./Layout.module.css";
+import * as css from "./styles";
 
 type Props = {
   headerSlot: ReactNode;
@@ -10,19 +10,19 @@ type Props = {
 
 export function Layout(props: Props) {
   return (
-    <div className={css.root}>
+    <div css={css.root}>
       {props.announcementSlot}
       {props.headerSlot}
-      <div className={css.container}>
-        <div className={css.content}>
+      <div css={css.container}>
+        <div css={css.content}>
           <Outlet />
         </div>
         {props.sidebarSlot && (
-          <aside className={css.sidebar}>{props.sidebarSlot}</aside>
+          <aside css={css.sidebar}>{props.sidebarSlot}</aside>
         )}
       </div>
-      <footer className={css.footer}>
-        <div className="text_sm">
+      <footer css={[css.footer, { textAlign: "center" }]}>
+        <div css="text_sm">
           see source code on{" "}
           <a href="https://github.com/createhb21/use-ref">
             github/createhb21/use-ref
